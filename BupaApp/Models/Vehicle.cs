@@ -6,7 +6,7 @@ using BupaApp.Models;
 
 namespace BupaApp.Models
 {
-    public class Veichle
+    public class Vehicle
     {
         public string Make {get; set;}
         public string Model {get; set;}

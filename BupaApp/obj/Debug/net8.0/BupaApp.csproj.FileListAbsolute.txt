@@ -27,3 +27,4 @@
 /home/james/Documents/Bupa/Bupa/BupaApp/obj/Debug/net8.0/BupaApp.pdb
 /home/james/Documents/Bupa/Bupa/BupaApp/obj/Debug/net8.0/BupaApp.genruntimeconfig.cache
 /home/james/Documents/Bupa/Bupa/BupaApp/obj/Debug/net8.0/ref/BupaApp.dll
+/home/james/Documents/Bupa/Bupa/BupaApp/obj/Debug/net8.0/BupaApp.sourcelink.json
