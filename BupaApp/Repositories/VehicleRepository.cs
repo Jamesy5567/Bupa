@@ -26,20 +26,20 @@ namespace BupaApp.Repositories
         }
 
         [HttpGet]
-        public async Task<Vehicle>GetVehicle(string registrationplate)
+        public async Task<Vehicle> GetVehicle(string plate)
         {
-            var response = await _httpClient.GetAsync($"{registrationplate}");
+           var response = await _httpClient.GetAsync($"{plate}");
 
-            if (response.IsSuccessStatusCode)
-            {
+           if (response.IsSuccessStatusCode)
+           {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
 
                 return JsonSerializer.Deserialize<Vehicle>(jsonResponse);
-            }
-            else 
-            {
+           }
+           else 
+           {
                 throw new HttpRequestException($"Failed to fetch vehicle details: {response.ReasonPhrase}");
-            }
+           }
         }
     }
 }

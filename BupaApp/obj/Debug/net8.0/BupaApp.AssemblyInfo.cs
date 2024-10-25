@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BupaApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4efdb8ded83681f6216a07b115c48cfc0cba0606")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+990f86b40a2b05e8c468000faaeeb4aceb44e893")]
 [assembly: System.Reflection.AssemblyProductAttribute("BupaApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BupaApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

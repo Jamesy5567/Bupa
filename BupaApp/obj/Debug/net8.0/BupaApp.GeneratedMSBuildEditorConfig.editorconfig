@@ -46,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/james/Documents/Bupa/Bupa/BupaApp/Views/Vehicle/Search.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWNsZS9TZWFyY2gucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/james/Documents/Bupa/Bupa/BupaApp/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-w44s0v39x2
