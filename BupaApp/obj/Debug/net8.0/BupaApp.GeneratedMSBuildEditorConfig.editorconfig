@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/james/Documents/Bupa/Bupa/BupaApp/Components/Pages/Vehicles/Search.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9WZWhpY2xlcy9TZWFyY2gucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/james/Documents/Bupa/Bupa/BupaApp/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/james/Documents/Bupa/Bupa/BupaApp/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/james/Documents/Bupa/Bupa/BupaApp/Views/Vehicle/Search.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWNsZS9TZWFyY2gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/james/Documents/Bupa/Bupa/BupaApp/Components/Layout/MainLayout.razor]

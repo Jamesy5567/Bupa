@@ -1,0 +1,46 @@
+@page "/vehicle/search"
+@using BupaApp.Interfaces
+@using BupaApp.Models
+@inject IVehicleRepository _vehicle
+
+<PageTitle>Search</PageTitle>
+
+<h3>Parent List</h3>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p style="color:red;">Error: @errorMessage</p>
+}
+
+@if (vehicle != null)
+{
+
+}
+else 
+{
+    <button class="btn btn-primary" @@onclick="SearchDetails">Click Me</button>
+}
+
+@code {
+    private Vehicle vehicle;
+    private string errorMessage;
+    public string registration;
+
+     protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        var test = _vehicle.GetVehicle("XX10ABC");
+    }
+
+    private async Task SearchDetails()
+    {
+        try 
+        {
+           vehicle = await _vehicle.GetVehicle(registration);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+    }
+}
