@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using BupaApp.Components;
 using BupaApp.Data;
 using BupaApp.Interfaces;
@@ -12,6 +13,7 @@ builder.Services.AddRazorComponents()
 builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
 builder.Services.AddHttpClient<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
+builder.Services.AddBlazorBootstrap();
 
 var app = builder.Build();
 

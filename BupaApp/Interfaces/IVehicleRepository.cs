@@ -8,6 +8,6 @@ namespace BupaApp.Interfaces
 {
     public interface IVehicleRepository
     {
-        Task<Vehicle> GetVehicle(string plate);
+        Task<List<Vehicle>> GetVehicle(string plate);
     }
 }

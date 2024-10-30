@@ -5,38 +5,84 @@
 
 <PageTitle>Search</PageTitle>
 
-<h3>Parent List</h3>
+<h3>Mot History</h3>
 
 @if (!string.IsNullOrEmpty(errorMessage))
 {
     <p style="color:red;">Error: @errorMessage</p>
 }
 
-@if (vehicle != null)
-{
+<div class="col-md-12 row">
+    <div class="col-md-6">
+        <label class="control-label">Enter Registration:</label>
+        <InputText @bind-Value="registration"></InputText>
+        @* <input @bind-Value:"registration" /> *@
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-primary" @onclick="SearchDetails">Search</button>
+    </div>
+</div>
 
+@if (vehicles != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Colour</th>
+                <th>Expiry Date</th>
+                <th>Miles</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehicle in vehicles)
+            {
+                <tr>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Model</td>
+                <td>@vehicle.PrimaryColour</td>
+               @* @if (vehicle.MotTests != null)
+                {
+                    <td>@vehicle.MotTests.ExpiryDate</td>
+                    <td>@vehicle.MotTests.OdometerValue</td>
+                }  *@              
+            </tr>
+            }
+            
+        </tbody>
+    </table>
 }
 else 
 {
-    <button class="btn btn-primary" @@onclick="SearchDetails">Click Me</button>
+    <p>No Data Found.</p>
 }
 
 @code {
-    private Vehicle vehicle;
+    private List<Vehicle> vehicles;
     private string errorMessage;
     public string registration;
 
      protected override async Task OnInitializedAsync()
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
-        var test = _vehicle.GetVehicle("XX10ABC");
+       // var test = _vehicle.GetVehicle("XX10ABC");
+
+       try 
+        {
+           vehicles = await _vehicle.GetVehicle("CU16XFT");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
     }
 
     private async Task SearchDetails()
     {
         try 
         {
-           vehicle = await _vehicle.GetVehicle(registration);
+           vehicles = await _vehicle.GetVehicle(registration);
         }
         catch (Exception ex)
         {
