@@ -1,6 +1,7 @@
 @page "/vehicle/search"
 @using BupaApp.Interfaces
 @using BupaApp.Models
+@using System.Linq
 @inject IVehicleRepository _vehicle
 
 <PageTitle>Search</PageTitle>
@@ -16,10 +17,9 @@
     <div class="col-md-6">
         <label class="control-label">Enter Registration:</label>
         <InputText @bind-Value="registration"></InputText>
-        @* <input @bind-Value:"registration" /> *@
     </div>
     <div class="col-md-6">
-        <button class="btn btn-primary" @onclick="SearchDetails">Search</button>
+        <Button @onclick="() => SearchDetails()" Color="ButtonColor.Primary">Search</Button>
     </div>
 </div>
 
@@ -42,11 +42,11 @@
                 <td>@vehicle.Make</td>
                 <td>@vehicle.Model</td>
                 <td>@vehicle.PrimaryColour</td>
-               @* @if (vehicle.MotTests != null)
+              @if (vehicle.MotTests != null)
                 {
-                    <td>@vehicle.MotTests.ExpiryDate</td>
-                    <td>@vehicle.MotTests.OdometerValue</td>
-                }  *@              
+                    <td>@vehicle.MotTests.FirstOrDefault().ExpiryDate</td>
+                    <td>@vehicle.MotTests.FirstOrDefault().OdometerValue</td>
+                }           
             </tr>
             }
             
@@ -63,30 +63,16 @@ else
     private string errorMessage;
     public string registration;
 
-     protected override async Task OnInitializedAsync()
-    {
-        // Simulate asynchronous loading to demonstrate streaming rendering
-       // var test = _vehicle.GetVehicle("XX10ABC");
-
-       try 
-        {
-           vehicles = await _vehicle.GetVehicle("CU16XFT");
-        }
-        catch (Exception ex)
-        {
-            errorMessage = ex.Message;
-        }
-    }
-
     private async Task SearchDetails()
     {
-        try 
+        try
         {
-           vehicles = await _vehicle.GetVehicle(registration);
+            vehicles = await _vehicle.GetVehicle(registration);
+            StateHasChanged(); // Trigger UI update if necessary
         }
         catch (Exception ex)
         {
             errorMessage = ex.Message;
         }
-    }
+}   
 }
